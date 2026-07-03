@@ -1,0 +1,52 @@
+# Bonus Linux Commands — With Examples
+
+## Searching & Filtering
+| Command | Example | What it does |
+|---|---|---|
+| `grep "text" file` | `grep "root" /etc/passwd` | Finds lines containing "root" in that file |
+| `grep -r "text" folder` | `grep -r "password" /var/www/` | Searches every file inside that folder for "password" |
+| `find / -name "filename"` | `find / -name "id_rsa"` | Searches whole system for a file named `id_rsa` (SSH private key — high-value find) |
+| `find / -perm -4000` | `find / -perm -4000 2>/dev/null` | Finds all SUID files (used to hunt privilege escalation paths) |
+| `locate filename` | `locate config.php` | Quickly finds files named `config.php` anywhere indexed |
+
+## Piping & Redirection
+| Example | What it does |
+|---|---|
+| `cat /etc/passwd \| grep root` | Shows only the line containing "root" from that file |
+| `ps aux \| grep ssh` | Shows only running processes related to "ssh" |
+| `nmap 192.168.1.1 > scan_results.txt` | Saves a network scan's output into a file instead of printing it |
+| `history \| grep apt` | Shows only past commands that included "apt" |
+
+## Downloading Files
+| Example | What it does |
+|---|---|
+| `wget https://example.com/tool.zip` | Downloads `tool.zip` to your current folder |
+| `curl -O https://example.com/script.py` | Downloads `script.py` |
+| `curl https://api.example.com/data` | Fetches raw data from a web API (common in web app testing) |
+
+## Network Info
+| Example | What it does |
+|---|---|
+| `ip a` | Shows your Kali VM's IP address (e.g., `192.168.1.10`) |
+| `ping 8.8.8.8` | Checks if Google's DNS server is reachable — tests connectivity |
+| `netstat -tulnp` | Lists open ports, e.g., shows port 22 open if SSH is running |
+
+## Compression
+| Example | What it does |
+|---|---|
+| `tar -xvf wordlists.tar` | Extracts a wordlist archive so you can use it |
+| `unzip rockyou.zip` | Extracts the famous `rockyou.txt` password list |
+
+## Productivity Shortcuts
+| Example | What it does |
+|---|---|
+| `man grep` | Opens full documentation for the `grep` command |
+| `rm *.log` | Deletes every file ending in `.log` in current folder |
+| `alias scan='nmap -sV'` | Now typing just `scan 192.168.1.1` runs `nmap -sV 192.168.1.1` |
+
+## Automation
+| Example | What it does |
+|---|---|
+| `crontab -e` then add: `0 2 * * * /home/kali/backup.sh` | Runs `backup.sh` automatically every day at 2 AM |
+
+---
