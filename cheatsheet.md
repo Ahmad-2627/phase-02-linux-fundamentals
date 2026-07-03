@@ -89,5 +89,3 @@ echo "$name"                # use a variable
 | `./script.sh` | Run the script |
 
 ---
-
-Noted your full instructions and preferences (simple English, tech terms explained, roadmap remembered across chats). This matches what we've been doing — no changes needed. Ready for Phase 3 whenever you are.
